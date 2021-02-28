@@ -1,0 +1,42 @@
+.myWatch-content {
+  padding: 50px;
+  font-family: sans-serif;
+  background-image: url("https://www.nme.com/wp-content/uploads/2020/05/rick-and-morty-3.jpg");
+  width: 2000px;
+  height: 1200px;
+  }
+.font-content {
+  font-family: sans-serif;
+  width: 900px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.text-field {
+  margin-right: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.form-title {
+  margin-left: 50px;
+}
+.table-content {
+  margin-top: 50px;
+  margin-bottom: 20px;
+  width: 950px;
+  opacity: 0.7;
+  background-color: white;
+  font-size: 1.2em;
+}
+div .head-row {
+  color: #ff4706;
+  font-size: 1.5em;
+  font-weight: bold
+}
+.body-content {
+  color: red;
+}
+div .remote-button {
+  margin-left: 780px;
+}
