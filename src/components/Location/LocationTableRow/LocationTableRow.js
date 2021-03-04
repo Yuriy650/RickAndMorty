@@ -15,7 +15,7 @@ const LocationTableRow = (props) => {
             <TableCell className={classes.cell} align="center">{props.name}</TableCell>
             <TableCell className={classes.cell} align="center">{props.type}</TableCell>
             <TableCell className={classes.cell} align="center">{props.dimension}</TableCell>
-            <TableCell className={classes.cell} align="center">{props.created}</TableCell>
+
         </TableRow>
     )
 }

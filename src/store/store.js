@@ -10,6 +10,12 @@ import {addSelectedStatusReducer} from "../Redux/reducers/add-selected-status-re
 import {addEpisodesNameReducer} from "../Redux/reducers/add-episodes-name-reducer";
 import {addEpisodesFilterReducer} from "../Redux/reducers/add-episodes-filter-reducer";
 import {addEpisodesDateReducer} from "../Redux/reducers/add-episodes-date-reducer";
+import {addLocationNameReducer} from "../Redux/reducers/add-location-name-reducer";
+import {addLocationTypeReducer} from "../Redux/reducers/add-location-type-reducer";
+import {addLocationDimensionReducer} from "../Redux/reducers/add-location-dimension-reducer";
+import {addPageReducer} from "../Redux/reducers/add-page-reducer";
+import {addEpisodePageReducer} from "../Redux/reducers/add-episode-page-reducer";
+import {addLocationPageReducer} from "../Redux/reducers/add-location-page-reducer";
 
 const reducer = combineReducers({
     addSomeCharacterReducer,
@@ -20,7 +26,13 @@ const reducer = combineReducers({
     addSelectedStatusReducer,
     addEpisodesNameReducer,
     addEpisodesFilterReducer,
-    addEpisodesDateReducer
+    addEpisodesDateReducer,
+    addLocationNameReducer,
+    addLocationTypeReducer,
+    addLocationDimensionReducer,
+    addPageReducer,
+    addEpisodePageReducer,
+    addLocationPageReducer
 })
 const store = createStore(
     reducer,

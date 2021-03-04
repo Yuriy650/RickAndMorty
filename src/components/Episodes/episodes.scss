@@ -1,8 +1,19 @@
-.episodes-content{
+.episode-content {
   padding: 50px;
   font-family: sans-serif;
   background-image: url("https://cdn.mos.cms.futurecdn.net/h4F9sAFM7FCP4pdwFz9ngW.jpg");
   font-size: 1.2em;
   font-weight: bold;
   color: red;
+}
+.episodes-table {
+  width: 650px;
+  opacity: 0.8;
+  background-color: lightyellow;
+}
+div .episodes-headRow {
+  color: orange;
+  font-size: 1.1em;
+  font-weight: bold;
+
 }

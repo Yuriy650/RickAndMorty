@@ -6,10 +6,10 @@ const initialState = {
     }
 }
 
-export const addNewEpisodeReducer = (state=initialState.data.results, action) => {
+export const addNewEpisodeReducer = (state=initialState.data, action) => {
     switch (action.type) {
         case ADD_NEW_EPISODE:
-            return action.payload
+            return {...state, results: action.payload}
     }
     return state;
 }

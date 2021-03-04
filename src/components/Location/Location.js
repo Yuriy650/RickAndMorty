@@ -1,72 +1,97 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import './location.scss';
-import Paper from "@material-ui/core/Paper";
-import Table from "@material-ui/core/Table";
-import TableHead from "@material-ui/core/TableHead";
-import TableRow from "@material-ui/core/TableRow";
-import TableCell from "@material-ui/core/TableCell";
-import TableBody from "@material-ui/core/TableBody";
-import TableContainer from "@material-ui/core/TableContainer";
-import axios from "axios";
-import {makeStyles} from "@material-ui/core/styles";
 import LocationTableRow from "./LocationTableRow/LocationTableRow";
 import addNewLocationsAction from "../../Redux/actions/add-new-location-action";
-const useStyles = makeStyles({
-    table: {
-        width: 850,
-        opacity: 0.8,
-        backgroundColor: "lightyellow"
+import addLocationPageAction from "../../Redux/actions/add-location-page-action";
+import classes from './location.module.css';
+import Table from "@material-ui/core/Table";
+import TableHead from "@material-ui/core/TableHead";
+import TableCell from "@material-ui/core/TableCell";
+import TableBody from "@material-ui/core/TableBody";
+import FormFilterNameLocation from "./FormFilterNameLocation/FormFilterNameLocation";
+import FormFilterTypeLocation from "./FormFilterTypeLocation/FormFilterTypeLocation";
+import FormFilterDimensionLocation from "./FormFilterDimensionLocation/FormFilterDimensionLocation";
+import Pagination from "@material-ui/lab/Pagination";
 
-    },
-    headRow: {
-        color: "red",
-        fontSize: '1.2em',
-        fontWeight: "bold"
-    },
-    body: {
-        color: "red",
-        fontWeight: "bold"
+class Location extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            rowsPerPage: 20,
+            currentPage: 1,
+            countPages: 1
+        }
     }
-});
-const Location = ({newLocations, addNewLocationsAction}) => {
-    axios.get("https://rickandmortyapi.com/api/location/").then(response => {
-        addNewLocationsAction(response.data.results);
-        console.log(response.data.results);
-    })
-    const classes = useStyles();
+    componentDidMount() {
+        fetch(`https://rickandmortyapi.com/api/location?page=${2}`)
+            .then((response) => {
+                return response.json();
+            })
+            .then(data => {
+                this.props.addNewLocationsAction(data.results);
+                this.setState({countPages: Math.ceil(data.info.count/this.state.rowsPerPage)})
+            })
+    }
+    handleOnChangePage(e) {
+        this.props.addLocationPageAction(+e.target.innerText);
+        fetch(`https://rickandmortyapi.com/api/location?page=${+e.target.innerText}`)
+            .then((response) => {
+                return response.json();
+            })
+            .then(data => {
+                this.props.addNewLocationsAction(data.results);
+                this.setState({countPages: Math.ceil(data.info.count/this.state.rowsPerPage)})
+            })
+
+    }
+    render() {
         return (
-            <div className='location-content'>
-                <TableContainer className={classes.table} component={Paper}>
-                    <Table className={classes.row} weight="bold" size="small" aria-label="a dense table">
+            <div className={classes.locationContent}>
+                <div className={classes.locationTable} >
+                    <Table className={classes.row} weight="bold" size="medium" aria-label="a dense table">
                         <TableHead>
-                            <TableRow>
-                                <TableCell align="center" className={classes.headRow}>Name</TableCell>
-                                <TableCell align="center" className={classes.headRow}>Type</TableCell>
-                                <TableCell align="center" className={classes.headRow}>Dimension</TableCell>
-                                <TableCell align="center" className={classes.headRow}>Created</TableCell>
-                            </TableRow>
+
+                                <TableCell align="center" className={classes.headRowLocation}>
+                                    <FormFilterNameLocation/>
+                                </TableCell>
+                                <TableCell align="center" className={classes.headRowLocation}>
+                                    <FormFilterTypeLocation/>
+                                </TableCell>
+                                <TableCell align="center" className={classes.headRowLocation}>
+                                    <FormFilterDimensionLocation/>
+                                </TableCell>
+
                         </TableHead>
-                        <TableBody >
-                            {newLocations.map(item => {
+                        <TableBody>
+                            {this.props.newLocations.filter(item => item.name.toLowerCase().includes(this.props.locationName.toLowerCase())).filter(
+                                item => item.type.toLowerCase().includes(this.props.locationType.toLowerCase())).filter(
+                                item => item.dimension.toLowerCase().includes(this.props.locationDimension.toLowerCase())).map(item => {
                                 return (
                                     <LocationTableRow id={item.id}
                                                       name={item.name}
                                                       type={item.type}
                                                       dimension={item.dimension}
-                                                      created={item.created}
                                     />
                                 )
                             })}
                         </TableBody>
                     </Table>
-                </TableContainer>
+                </div>
+                <div className={classes.characterPage}>
+                    <Pagination count={this.state.countPages} size="small" color="secondary"
+                                onClick={(e)=>this.handleOnChangePage(e)}/>
+                </div>
             </div>
         )
-}
-const getStateToProps = (state) => {
-    return {
-        newLocations: state.addNewLocationReducer
     }
 }
-export default connect(getStateToProps, {addNewLocationsAction})(Location);
+const mapStateToProps = (state) => {
+    return {
+        newLocations: state.addNewLocationReducer,
+        locationName: state.addLocationNameReducer,
+        locationType: state.addLocationTypeReducer,
+        locationDimension: state.addLocationDimensionReducer,
+        locationPage: state.addLocationPageReducer
+    }
+}
+export default connect(mapStateToProps, {addNewLocationsAction, addLocationPageAction})(Location);

@@ -63,6 +63,16 @@ const FormSelected = ({addSelectedGenderAction, addSelectedSpeciesAction, addSel
                     <option className={classes.option} aria-label="None" value=""/>
                     <option className={classes.option} value='Human'>Human</option>
                     <option className={classes.option} value='Alien'>Alien</option>
+                    <option className={classes.option} value='Humanoid'>Humanoid</option>
+                    <option className={classes.option} value='Animal'>Animal</option>
+                    <option className={classes.option} value='Mythological Creature'>Mythological Creature</option>
+                    <option className={classes.option} value='Disease'>Disease</option>
+                    <option className={classes.option} value='Cronenberg'>Cronenberg</option>
+                    <option className={classes.option} value='Poopybutthole'>Poopybutthole</option>
+                    <option className={classes.option} value='Robot'>Robot</option>
+                    <option className={classes.option} value='unknown'>unknown</option>
+
+
                 </Select>
             </FormControl>
             <FormControl onChange={handleStatusOnChange} variant="filled" color='secondary' className={classes.formControl}>
@@ -78,11 +88,11 @@ const FormSelected = ({addSelectedGenderAction, addSelectedSpeciesAction, addSel
         </form>
     )
 }
-const getStateToProps = (state) => {
+const mapStateToProps = (state) => {
     return {
         gender: state.addSelectedGenderReducer,
         species: state.addSelectedSpeciesReducer,
         status: state.addSelectedStatusReducer
     }
 }
-export default connect(getStateToProps, {addSelectedGenderAction, addSelectedSpeciesAction, addSelectedStatusAction})(FormSelected);
+export default connect(mapStateToProps, {addSelectedGenderAction, addSelectedSpeciesAction, addSelectedStatusAction})(FormSelected);
