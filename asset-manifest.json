@@ -1,28 +1,28 @@
 {
   "files": {
-    "main.css": "/RickAndMorty/static/css/main.b8c737f2.chunk.css",
-    "main.js": "/RickAndMorty/static/js/main.f1fa0b6f.chunk.js",
-    "main.js.map": "/RickAndMorty/static/js/main.f1fa0b6f.chunk.js.map",
-    "runtime-main.js": "/RickAndMorty/static/js/runtime-main.5601125c.js",
-    "runtime-main.js.map": "/RickAndMorty/static/js/runtime-main.5601125c.js.map",
+    "main.css": "/RickAndMorty/static/css/main.92a5be66.chunk.css",
+    "main.js": "/RickAndMorty/static/js/main.72f8cd57.chunk.js",
+    "main.js.map": "/RickAndMorty/static/js/main.72f8cd57.chunk.js.map",
+    "runtime-main.js": "/RickAndMorty/static/js/runtime-main.b4c9d6da.js",
+    "runtime-main.js.map": "/RickAndMorty/static/js/runtime-main.b4c9d6da.js.map",
     "static/css/2.e84ad4b1.chunk.css": "/RickAndMorty/static/css/2.e84ad4b1.chunk.css",
-    "static/js/2.451dd7f5.chunk.js": "/RickAndMorty/static/js/2.451dd7f5.chunk.js",
-    "static/js/2.451dd7f5.chunk.js.map": "/RickAndMorty/static/js/2.451dd7f5.chunk.js.map",
-    "static/js/3.fb0b1627.chunk.js": "/RickAndMorty/static/js/3.fb0b1627.chunk.js",
-    "static/js/3.fb0b1627.chunk.js.map": "/RickAndMorty/static/js/3.fb0b1627.chunk.js.map",
+    "static/js/2.88101ae3.chunk.js": "/RickAndMorty/static/js/2.88101ae3.chunk.js",
+    "static/js/2.88101ae3.chunk.js.map": "/RickAndMorty/static/js/2.88101ae3.chunk.js.map",
+    "static/js/3.d0020590.chunk.js": "/RickAndMorty/static/js/3.d0020590.chunk.js",
+    "static/js/3.d0020590.chunk.js.map": "/RickAndMorty/static/js/3.d0020590.chunk.js.map",
     "index.html": "/RickAndMorty/index.html",
     "static/css/2.e84ad4b1.chunk.css.map": "/RickAndMorty/static/css/2.e84ad4b1.chunk.css.map",
-    "static/css/main.b8c737f2.chunk.css.map": "/RickAndMorty/static/css/main.b8c737f2.chunk.css.map",
-    "static/js/2.451dd7f5.chunk.js.LICENSE.txt": "/RickAndMorty/static/js/2.451dd7f5.chunk.js.LICENSE.txt",
+    "static/css/main.92a5be66.chunk.css.map": "/RickAndMorty/static/css/main.92a5be66.chunk.css.map",
+    "static/js/2.88101ae3.chunk.js.LICENSE.txt": "/RickAndMorty/static/js/2.88101ae3.chunk.js.LICENSE.txt",
     "static/media/rick-title.ae6cc7b2.png": "/RickAndMorty/static/media/rick-title.ae6cc7b2.png",
     "static/media/rickAndMorty3.29df0783.png": "/RickAndMorty/static/media/rickAndMorty3.29df0783.png",
     "static/media/index.css": "/RickAndMorty/static/media/roboto-vietnamese-400-normal.52cebac0.woff2"
   },
   "entrypoints": [
-    "static/js/runtime-main.5601125c.js",
+    "static/js/runtime-main.b4c9d6da.js",
     "static/css/2.e84ad4b1.chunk.css",
-    "static/js/2.451dd7f5.chunk.js",
-    "static/css/main.b8c737f2.chunk.css",
-    "static/js/main.f1fa0b6f.chunk.js"
+    "static/js/2.88101ae3.chunk.js",
+    "static/css/main.92a5be66.chunk.css",
+    "static/js/main.72f8cd57.chunk.js"
   ]
 }
