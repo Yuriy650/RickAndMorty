@@ -7,6 +7,7 @@ const initialState = {
 
 }
 export const addSomeCharacterReducer = (state=initialState.data, action) => {
+    // eslint-disable-next-line default-case
     switch (action.type) {
         case ADD_SOME_CHARACTER:
             return {...state, results: action.payload}

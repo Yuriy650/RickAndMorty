@@ -17,7 +17,7 @@ function App() {
                     <Route path='/episodes' component={Episodes}/>
                     <Route path='/location' component={Location}/>
                     <Route path='/mywatch' component={MyWatch}/>
-                    <Route path='/home' component={Home}/>
+                  {/*  <Route path='/home' component={Home}/>*/}
                     <Route path='/' component={Home}/>
                 </div>
             </BrowserRouter>
